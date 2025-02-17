@@ -66,7 +66,7 @@ app.post('/submit', async (req, res) => {
     res.render('user-added-mssg');
   }
   else{
-    res.send("Password Donot Match");
+    res.send("Password Didn't Match");
   }
 }
  catch (error) {
