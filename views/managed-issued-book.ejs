@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managed-Issued-Book</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        td {
+        font-weight: normal;
+        font-size: 12px;
+      }
+    </style>
+</head>
+<body>
+    <%- include('admin-header') %>
+    <p class="page-heading">MANAGE ISSUED BOOKS</p>
+    <table>
+        <tr>
+            <th colspan="11">Issued Books</th>
+        </tr>
+        <tr>
+            <td colspan="5"><select name="record-row" id="record-row-page">
+                <option value="10">10</option>+
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        <p style="color: black; display: inline-block;">Records per page</p>
+        <td colspan="1"></td>
+            <td colspan="5" id="table-search"><p style="color: black; display: inline-block; margin-right: 10px;">Search:</p><input type="search" id="issued-books-input"></td>
+        </tr>
+        <tr>
+            <th colspan="1">#</th>
+             <th colspan="2">Student ID</th>
+             <th colspan="2">Book Name</th>
+             <th colspan="1">ISBN</th>
+             <th colspan="2">Issued Date</th>
+             <th colspan="2">Return Date</th>
+             <th colspan="1">Action</th>
+        </tr>
+        <tbody>
+        <tr>
+            <% var index1=0 %> <% var index=0 %> 
+            <% issuebook.forEach(issue => { %>
+            <td colspan="1"><%= ++index1 %></td>
+            <td colspan="2"><%= issue.studentid %></td>
+            <td colspan="2"><%= issue.bookname %></td>
+            <td colspan="1"><%= issue.isbnnumber %></td>
+            <td colspan="2">
+                2024-02-01 11:15:57
+            </td>
+            <td colspan="2">
+                2024-02-04 12:03:08
+            </td>
+            <td colspan="1">
+                <form action="/update-issue-book/<%= issue._id %>" method="get" style="display: inline-block;">
+                <button class="btns edit-btn">Edit</button>
+            </form>
+                <form action="/delete-issue-book/<%= issue._id %>" method="post" style="display: inline-block;">
+                <button class="btns delete-btn">Delete</button>
+            </form>
+            </td>
+        </tr>
+        <% }); %>
+      </tbody>
+        
+        <tr>
+            <td colspan="4">
+                Showing 1 to 2 of 2 entries
+            </td>
+            <td colspan="4"></td>
+            <td colspan="1" style="cursor:not-allowed;">
+                Previous</td>
+            <td colspan="1" style="background-color: rgb(41, 106, 228); color: white;">1</td>
+            <td colspan="1" style="cursor:not-allowed;">Next</td>
+        </tr>
+
+    </table>
+            <script src="script.js"></script>
+    </body>
+</html>

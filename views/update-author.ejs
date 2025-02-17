@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Author</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../account.css">
+</head>
+<body>
+    <%- include('admin-header') %>
+    
+    <p class="page-heading">Update Author</p>
+    <form action="/update-author/<%= author._id %>" method="post">
+<table class="chng-pwd-table">
+    <tr>
+        <th style="font-size: 15px;" colspan="10">Author Info</th>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <label for="author-name">Author Name:</label>
+        </td>
+        <td colspan="5">
+            <input type="text" id="add-category" name="authorname" class="chng-pwd-format" value="<%= author.authorname %>">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn" type="submit">Update</button>
+        </td>
+    </tr>
+</table>
+</form>
+<script src="script.js"></script>
+</body>
+</html>

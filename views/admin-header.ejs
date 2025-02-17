@@ -1,0 +1,218 @@
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(16, 32, 61);
+    border-radius: 12px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ---------- */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    display: grid;
+    grid-template-columns:1fr 5fr;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+    margin: 0;
+}
+.dash-nav{
+    border-bottom: 1px solid red;
+    background-color: rgb(8,19,39);
+    margin: 0;
+}
+.logo{
+    display: inline-block;
+}
+.logo>img{
+    height: 95px;
+    width: 90px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+ul{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+a:hover{
+    color: red;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    transition: 0.3s ease-in-out;
+}
+.sidebar{
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    background-color: rgb(8, 19, 39);
+    border-radius: 12px;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+    height: 500px;
+}
+i:hover{
+    color: red;
+}
+.menu-icon{
+    display: none;
+}
+.menu-icon,i{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+.btn{
+    background-color: red;
+    color: white;
+    padding: 14px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    
+}
+.btn:hover{
+    background-color: rgb(139, 28, 28);
+}
+
+#btn-anchor{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px 20px;
+}
+#btn-anchor:hover{
+    color: white;
+}
+
+@media screen and (max-width: 914px)
+{
+    .nav-full-view{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+    }
+}
+
+
+</style>
+
+<nav class="navbar dash-nav">
+    <div class="logo">
+        <img src="../images/logo.gif">
+    </div>
+    <ul class="nav-full-view">
+        <li><a href="/admin-dashboard">Dashboard</a></li>
+<li class="dropdown">
+<a href="#">Category</a>
+<ul class="dropdown-content">
+<li><a href="/add-category">Add Category</a></li>
+<li><a href="/listed-categories">Manage Category</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#">Authors</a>
+<ul class="dropdown-content">
+<li><a href="/add-author">Add Author</a></li>
+<li><a href="/author-listed">Manage Authors</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#">Books</a>
+<ul class="dropdown-content">
+<li><a href="/add-book">Add Book</a></li>
+<li><a href="/manage-book">Manage Books</a></li> </ul>
+</li>
+<li class="dropdown">
+<a href="#">Issue Books</a>
+<ul class="dropdown-content">
+<li><a href="/issue-book">Issue Book</a></li>
+<li><a href="/managed-issued-book">Manage Issued Books</a></li> </ul>
+</li>
+<li><a href="/registered-students">Reg Student</a></li>
+<li><a href="/admin-change-password">Change Password</a></li>
+<li>
+ <button class="btn" ><a href="/logout" id="btn-anchor">Log Me Out</a></button>
+</li>
+    </ul>
+    <div class="menu-icon" onclick="showSidebar();"><i class="fa-solid fa-bars"></i> </div>
+    <ul class="sidebar">
+        <li><a><i class="fa-solid fa-xmark" onclick="hideSidebar();"></i></a></li>
+        <li><a href="/admin-dashboard">Dashboard</a></li>
+<li class="dropdown">
+<a href="#">Category</a>
+<ul class="dropdown-content">
+<li><a href="/add-category">Add Category</a></li>
+<li><a href="/listed-categories">Manage Category</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#">Authors</a>
+<ul class="dropdown-content">
+<li><a href="/add-author">Add Author</a></li>
+<li><a href="/manage-author">Manage Authors</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#">Books</a>
+<ul class="dropdown-content">
+<li><a href="/add-book">Add Book</a></li>
+<li><a href="/manage-book">Manage Books</a></li> </ul>
+</li>
+<li class="dropdown">
+<a href="#">Issue Books</a>
+<ul class="dropdown-content">
+<li><a href="/issue-book">Issue Book</a></li>
+<li><a href="/managed-issued-book">Manage Issued Books</a></li> </ul>
+</li>
+<li><a href="/registered-students">Reg Student</a></li>
+<li><a href="/admin-change-password">Change Password</a></li>
+<li>
+    <button class="btn" ><a href="/logout" id="btn-anchor">Log Me Out</a></button>
+</li>
+    </ul>
+</nav>
+
+<script src="script.js"></script>

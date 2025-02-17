@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask-AI</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include('user-header') %>
+    <div class="user-dash-area" id="book-area" style="margin: 0; background-color: rgb(08,19,39);">
+      <h2 style="color: white; width: 100%; margin: 2% 0% 0% 15%;">AI Chat</h2>
+      <div> <%- include('sidemenu') %></div>
+        <div class="inner-box">
+      <iframe src="https://www.popai.pro/" height="500px" width="100%" style="overflow:hidden; background-color: white;"></iframe>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    <%- include('footer') %>
+  </body>
+</html>

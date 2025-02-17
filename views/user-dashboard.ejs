@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User-Dasboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <%- include('user-header') %>
+    <div class="user-dash-area" id="book-area" style="margin: 0; background-color: rgb(08, 19, 39);">
+      <h2 style="color: white; width: 100%; margin: 2% 0% 0% 15%;">Hello, <%= abcd.name %></h2>
+      <div> <%- include('sidemenu') %></div>
+        <div class="inner-box">
+      <a class="links book" href="/listed-book" id="user-dashboard-back">
+        <div id="margin-set">
+          <i class="fa-solid fa-book" style="color: rgb(08, 09, 39)"></i>
+          <p class="link-num">9</p>
+          <p class="links-para">Book Listed</p>
+        </div>
+      </a>
+
+      <a class="links book" href="/user-profile" id="user-dashboard-back">
+        <div id="margin-set">
+          <i class="fa-solid fa-user" style="color: rgb(08, 09, 39)"></i>
+          <p class="link-num">---</p>
+          <p class="links-para">My Profile</p>
+        </div>
+      </a>
+
+      <a class="links book" href="/issued-books" id="user-dashboard-back">
+        <div id="margin-set">
+          <i class="fa-solid fa-book" style="color: rgb(08, 09, 39)"></i>
+          <p class="link-num">5</p>
+          <p class="links-para">Issued Book</p>
+        </div>
+      </a>
+
+      <a class="links book" href="/user-quiz" id="user-dashboard-back">
+        <div id="margin-set">
+          <i class="fa-solid fa-book" style="color: rgb(08, 09, 39)"></i>
+          <p class="link-num">5</p>
+          <p class="links-para">Quizess</p>
+        </div>
+      </a>
+
+      <a class="links book" href="#" id="user-dashboard-back">
+        <div id="margin-set">
+          <i class="fa-solid fa-recycle" style="color: rgb(08, 09, 39)"></i>
+          <p class="link-num">2</p>
+          <p class="links-para">Not Returned Yet?</p>
+        </div>
+      </a>
+
+    </div>
+    </div>
+    <script src="script.js"></script>
+    <%- include('footer') %>
+  </body>
+</html>

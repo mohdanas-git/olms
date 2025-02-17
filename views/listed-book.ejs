@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .book-details{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+   <%- include('user-header') %>
+   
+   <div class="user-dash-area" id="book-area">
+    <h2 style="color: rgb(0, 0, 0); width: 100%; margin: 2% 0% 0% 5%;">Available book</h2>
+    <% books.forEach(book => { %>
+    <div class="book">
+        <% if(book.bookpicUrl){ %>
+            <img src = "<%= book.bookpicUrl %>" alt="Book Image" id="book-img"> 
+            <% } %>
+       <div class="book-details">
+        <p class="book-name book-text-format"><%= book.bookname %></p>
+        <p class="book-category book-text-format"><%= book.bookcategory %></p>
+        <p class="book-author book-text-format"><%= book.author %></p>
+        <p class="book-isbn book-text-format"><%= book.isbnnum %></p>
+        <p class="book-price book-text-format"><%= book.price %></p>
+        <p class="book-issue book-text-format">Book Already issued</p>
+       </div>
+    </div> <% }) %>
+    </div>
+    <%- include('footer') %>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update-Profile</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../account.css" />
+  </head>
+  <body class="my-profile-form">
+    <%- include('user-header') %>
+    <p class="page-heading">Update Profile</p>
+<form action="/update-profile/<%= user._id %>" method="post">
+    <table class="chng-pwd-table">
+      <tr>
+        <th colspan="2">
+          <label style="font-size: 15px; color: white">Update Profile</label>
+        </th>
+      </tr>
+      <% var val = 100 %>
+      <tbody>
+        <tr>
+          <td>
+            <label for="std-id">Student ID :</label>
+          </td>
+          <td>
+            <p><%= ++val %></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="Reg-Date">Reg Date :</label>
+          </td>
+          <td>
+            <p>02/03/2024</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-stats">Profile Status :</label>
+          </td>
+          <td>
+            <p style="color: green; font-weight: bold">Active</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-name-change">Enter Full Name:</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              id="profile-name-change"
+              name="name"
+              class="chng-pwd-format"
+              value="<%= user.name %>"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-number-change">Mobile Number :</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              id="profile-number-change"
+              name="mob"
+              maxlength="10"
+              class="chng-pwd-format"
+              value="<%= user.mob %>"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-email-change">Enter Email :</label>
+          </td>
+          <td>
+            <input
+              type="email"
+              id="profile-email-change"
+              name="Email"
+              value="<%= user.email %>"
+              style="cursor: not-allowed"
+              class="chng-pwd-format"
+              disabled
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+              <button class="btn" style="margin: 12px" type="submit">
+                Update Now
+              </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</form>
+    <div class="footer-user-dash ftr">&copy 2024</div>
+    <script src="script.js"></script>
+  </body>
+</html>

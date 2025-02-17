@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizess</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .inner-box{
+        position: relative;
+        top: -55px;
+      }
+    </style>
+</head>
+<body>
+    <%- include('admin-header') %>
+    <p class="page-heading">Quizess</p>
+    <div class="user-dash-area user-dash-area-u" id="book-area" style="background-color: rgb(08,19,39);">
+        <%- include('admin-sidemenu') %>
+        <div class="inner-box">
+          <iframe src="<%= quizess.quizURL %>" frameborder="0" height="500px" width="100%" scrolling="no"></iframe>
+          </div>
+    </div>
+    <%- include('footer') %>
+</body>
+</html>

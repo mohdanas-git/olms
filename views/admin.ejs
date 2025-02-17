@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+  
+    <div class="container">
+            <div class="carousel">
+                <div class="carousel-track">
+                  <img class="carousel-slide active" src="/images/adminimg.webp" alt="Image 1">
+                  <img class="carousel-slide" src="/images/adiminimg2.webp" alt="Image 2">
+                  <img class="carousel-slide" src="/images/adminimg3.webp" alt="Image 3">
+                  <img class="carousel-slide" src="/images/adminimg4.webp" alt="Image 4">
+                </div>
+          </div>
+    <div class="form-container">
+              <h2>Admin Login</h2>
+              <form action="/admin-login" method="POST">
+                <div class="form-group">
+                  <label for="email">Email Id:</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required>
+                </div>
+                <a href="/admin-forget-password" id="form-para">Forget Password</a>
+                <br>
+                <button type="submit" class="btn">Login</button>
+              </form>
+            </div>
+    </div>
+    <div class="header"><%- include('home-header')%></div>
+    <div style="position: absolute; bottom: 0; width: 100%;"><%- include('footer')%></div>
+<script src="script.js"></script>
+</body>
+</html>

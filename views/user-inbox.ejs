@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include('user-header') %>
+    <%- include('sidemenu') %>
+    <p class="page-heading">Inbox</p>
+    <table>
+        <tr>
+            <th>#</th>
+          <th>Message</th>
+        </tr>
+          <% var index=0 %>
+            <% adminsendmail.forEach(adminmail => { %>
+        <tbody>
+        <tr>
+            <td><%= ++index %></td>
+          <td><pre style=" color: black; font-weight: 500;"><%= adminmail.mssgbox %></pre></td>
+        </tr>
+        </tbody>
+         <% }) %>
+      </table>
+            <script src="script.js"></script>
+            <script>
+                document.getElementById("date").innerHTML = Date();
+              </script>
+      </body>
+    </body>
+</html>

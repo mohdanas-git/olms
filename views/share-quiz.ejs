@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>share-quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    table{
+        width: 60%;
+    }
+    input{
+        width: 50vw;
+        height: 30px;
+        color: black;
+        font-weight: normal;
+    }
+</style>
+<body>
+    <%- include('admin-header') %>
+    
+    <p class="page-heading">Share Quiz</p>
+<form action="/share-quiz" method="post">
+    <table>
+        <tr><th colspan="5">Share Quiz</th></tr>
+        <tr><td colspan="3">Paste URL:</td><td colspan="2"><input type="text" name="quizURL" width="400px"></td></tr>
+        <tr><td><button class="btn" type="submit">Share Quiz</button></td></tr>
+      </table>
+</form>
+</body>
+</html>

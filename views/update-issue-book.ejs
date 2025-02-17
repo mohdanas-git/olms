@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue-Book</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../account.css">
+</head>
+<body>
+    <%- include('admin-header') %>
+    
+    <p class="page-heading">Update Issued Book</p>
+    <form action="/update-issue-book/<%= issue._id %>" method="post">
+<table class="chng-pwd-table">
+    <tr>
+        <th style="font-size: 15px;" colspan="10">Update Issued Book</th>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <label for="profile-email-change">Student ID*:</label>
+        </td>
+        <td colspan="5">
+            <input type="text" id="student-id" name="studentid"  value="<%= issue.studentid %>">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <label for="profile-email-change">Book Name*:</label>
+        </td>
+        <td colspan="5">
+            <input type="text" id="bookname" name="bookname"  value="<%= issue.bookname %>">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <label for="profile-email-change">ISBN Number*:</label>
+        </td>
+        <td colspan="5">
+            <input type="text" id="isbn-number" name="isbnnumber"  value="<%= issue.isbnnumber %>">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn" type="submit">Update</button>
+        </td>
+    </tr>
+</table>
+</form>
+<script src="script.js"></script>
+</body>
+</html>

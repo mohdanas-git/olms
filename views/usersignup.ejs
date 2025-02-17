@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-SignUp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <div class="container">
+        <div class="carousel">
+            <div class="carousel-track">
+              <img class="carousel-slide active" src="images/usersignup1.jpg" alt="Image 1">
+              <img class="carousel-slide" src="images/usersignup2.webp" alt="Image 2">
+              <img class="carousel-slide" src="images/usersignup3.webp" alt="Image 3">
+              <img class="carousel-slide" src="images/usersignup4.webp" alt="Image 4">
+            </div>
+          </div>
+
+        <div class="form-container">
+          <h2>SignUp Form</h2>
+          <form action="/submit" method="POST">
+            <div class="form-group">
+              <label for="fullName">Full Name:</label>
+              <input type="text" id="fullName" name="name">
+            </div>
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number:</label>
+              <input type="tel" id="mobileNumber" name="mob">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Id:</label>
+              <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Create Password:</label>
+              <input type="password" id="password" name="pwd">
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password:</label>
+              <input type="password" id="confirmPassword" name="cnfpwd">
+            </div>
+             <a href="/userlogin" id="form-para">Already have an account?</a>
+            <br>
+            <button type="submit" class="btn">Sign Up</button>
+          </form>
+        </div>
+      </div>
+      <div class="header"><%- include('home-header')%></div>
+      <div style="position: absolute; bottom: 0px; width: 100%;"><%- include('footer')%></div>
+<script src="script.js"></script>
+</body>
+</html>

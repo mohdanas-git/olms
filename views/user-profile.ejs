@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My-Profile</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../account.css" />
+  </head>
+  <body class="my-profile-form">
+    <%- include('user-header') %>
+    <p class="page-heading">My Profile</p>
+    
+    <table class="chng-pwd-table">
+      <tr>
+        <th colspan="2">
+          <label style="font-size: 15px; color: white">My Profile</label>
+        </th>
+      </tr>
+      <% var val = 100 %>
+      <tbody>
+        <tr>
+          <td>
+            <label for="std-id">Student ID :</label>
+          </td>
+          <td>
+            <p><%= ++val %></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="Reg-Date">Reg Date :</label>
+          </td>
+          <td>
+            <p>02/03/2024</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-stats">Profile Status :</label>
+          </td>
+          <td>
+            <p style="color: green; font-weight: bold">Active</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-name-change">Enter Full Name:</label>
+          </td>
+          <td>
+            <%= xyz.name %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-number-change">Mobile Number :</label>
+          </td>
+          <td>
+            <%= xyz.mob %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="profile-email-change">Enter Email :</label>
+          </td>
+          <td>
+            <%= xyz.email %>
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <form action="/update-profile/<%= xyz._id %>" method="get">
+                    <button class="btn">Update Profile</button>
+                  </form>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-user-dash ftr">&copy 2024</div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Mail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account.css">
+    <style>
+        #share-info{
+        position: absolute;
+        top: 150px;
+        right: 10px;
+        display: inline-block;
+        width: 250px;
+        background-color: rgb(17, 37, 72);
+        border-radius: 10px;
+        padding: 5px;
+        
+        }
+        #inner-box{
+          width: 70%;
+      display: flex;
+      justify-content: space-between;
+     }
+     table{
+        position: absolute;
+        top: 60px;
+        left: 10px;
+     }
+      </style>
+</head>
+<body>
+    <%- include('user-header') %>
+    <%- include('sidemenu') %>
+    <p class="page-heading">Send Mail</p>
+<form action="/send-mail" method="post" style=" position: relative;
+top: 0px;
+left: -120px;">
+<table class="chng-pwd-table">
+    <tr>
+        <th style="font-size: 15px;" colspan="10">Send Mail</th>
+    </tr>
+    <tr>
+        <td colspan="5">
+            Email ID :
+        </td>
+        <td colspan="3"></td>
+        <td colspan="2">
+            <input type="email" name="email" value="admin@gmail.com" disabled style="font-size: 13px; color: grey;">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="10">
+            Message Box :
+        </td>
+    </tr>
+    <tr>
+        <td colspan="10">
+           <textarea name="mssgbox" id="grievance" placeholder="Type Here....."></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn" type="submit">Send</button>
+        </td>
+    </tr>
+</table>
+</form>
+<div id="share-info">
+    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-bottom: 5px; color: white; font-weight: bolder; font-size: 20px;">Note:---------------------------- <br> <p style="font-weight: normal;color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 15px; text-align: left;">You Can Also Share Your Own Quiz <br><br>1: Type or paste your questions with multiple answer and correct answer in Message Box. <br> <br>2: It will be publish once verified by admin.</p></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

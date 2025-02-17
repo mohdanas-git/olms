@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table{
+            position: relative;
+            top: 180px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('admin-header') %>
+    <%- include('admin-sidemenu') %>
+    <p class="page-heading">Inbox</p>
+    <table>
+        <tr>
+            <th>#</th>
+          <th colspan="2">Message</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+          <% var index=0 %>
+            <% usersendmail.forEach(usermail => { %>
+        <tbody>
+        <tr>
+            <td><%= ++index %></td>
+          <td colspan="2"><pre style=" color: black; font-weight: 500;"><%= usermail.mssgbox %></pre></td>
+          <td><p id="date"></p></td>
+          <td>
+          <form action="/delete-mssg/<%=usermail._id %>" method="post">
+          <button class="btns delete-btn">Delete</button>
+          </form>
+          </td>
+        </tr>
+        </tbody>
+         <% }) %>
+      </table>
+            <script src="script.js"></script>
+            <script>
+              document.getElementById("date").innerHTML = Date();
+            </script>
+    </body>
+</html>

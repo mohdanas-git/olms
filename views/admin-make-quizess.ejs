@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizess</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      #share-info{
+      position: absolute;
+      top: 10px;
+      right: -90px;
+      display: inline-block;
+      width: 250px;
+      background-color: rgb(17, 37, 72);
+      border-radius: 10px;
+      padding: 5px;
+      }
+      #inner-box{
+        width: 70%;
+    display: flex;
+    justify-content: space-between;
+   }
+    </style>
+</head>
+<body>
+    <%- include('admin-header') %>
+    
+    <p class="page-heading">Quizess</p>
+    <div class="user-dash-area user-dash-area-u" id="book-area" style="background-color: rgb(08,19,39); margin: 0;">
+        <%- include('admin-sidemenu') %>
+        <div id="inner-box">
+          <iframe src="https://www.quiz-maker.com/Dashboard#pg=editor&qp=3556875x9837e822-193" height="680px" width="100%"></iframe>
+        </div>
+        <div id="share-info">
+          <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-bottom: 5px;">After Making Quiz<br> <p style="font-weight: normal; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">1: Click On Share. <br>2: Copy URL <br>3: Click on "Share Your Quiz" Button and Paste URL</p></p>
+        <button class="btn"><a href="/share-quiz" style="color: white;">Share Your Quiz</a></button>
+    </div>
+    </div>
+    <%- include('footer') %>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<style>
+  #index-nav {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+  }
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+  }
+  .dash-nav {
+    padding-bottom: 5px;
+    border-bottom: 1px solid red;
+    background-color: rgb(8, 19, 39);
+  }
+  .logo {
+    display: inline-block;
+  }
+  .logo > img {
+    height: 95px;
+    width: 90px;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+  ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  a:hover {
+    color: red;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    transition: 0.3s ease-in-out;
+  }
+  .sidebar {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(8, 19, 39);
+    border-radius: 12px;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+    height: 250px;
+  }
+  i:hover {
+    color: red;
+  }
+  #btn-anchor {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    padding: 10px 20px;
+  }
+  #btn-anchor:hover {
+    color: white;
+  }
+</style>
+
+<nav class="navbar dash-nav">
+  <div class="logo">
+    <img src="../images/logo.gif" />
+  </div>
+  <ul class="nav-full-view">
+    <li>
+      <a href="/user-dashboard">Dashboard</a>
+    </li>
+    <li>
+      <a href="/issued-books">Issued Books</a>
+    </li>
+    <li>
+      <a class="dropbtn" onclick="showOption();">Account</a>
+    </li>
+    <li>
+      <button class="btn">
+        <a href="/logout" id="btn-anchor">Log Me Out</a>
+      </button>
+    </li>
+  </ul>
+  <div class="drop-ul">
+      <li><a href="/user-profile">My Profile</a></li>
+    <li><a href="/change-password">Change Password</a></li>
+  </div>
+  <div class="menu-icon" onclick="showSidebar();">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <ul class="sidebar">
+    <li>
+      <i class="fa-solid fa-xmark" onclick="hideSidebar();"></i>
+    </li>
+    <li>
+      <a href="/user-dashboard">Dashboard</a>
+    </li>
+    <li>
+      <a href="/issued-books">Issued Books</a>
+    </li>
+    <li>
+      <a class="dropbtn" onclick="showOption();">Account</a>
+    </li>
+    <li>
+      <button class="btn">
+        <a href="/logout" id="btn-anchor">Log Me Out</a>
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<script src="script.js"></script>

@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Playwrite+DE+Grund:wght@100..400&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+*{
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(8, 19, 39);
+}
+
+.main-area2{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    flex-wrap: wrap;
+    top: 290px;
+}
+
+.home-elements{
+    display: flex;
+    justify-content: space-around;
+    gap: 190px;
+    max-width: 100%;
+}
+
+.book-info>p{
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#article{
+    display: none;
+}
+#home-book{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 45%;
+    padding: 0;
+}
+#book{
+    display: none;
+}
+#resource{
+    display: none;
+}
+.single-book{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.book img{
+    height: 180px;
+    width: 150px;
+}
+.book-info{
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.book-info>p{
+    text-align: left;
+    margin: 0;
+    margin-left: 10px;
+}
+.home-cards{
+    width: 20vw;
+    height: 30vh;
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+}
+.home-cards:hover{
+    background-color: white;
+}
+.home-cards>h3{
+    
+    margin-top: 15px;
+    color: rgb(8,19,39);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.home-cards>i{
+    font-size: 100px;
+    color: rgb(8,19,39);
+    margin-top: 20px;
+}
+
+.card-background{
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+    width: 90%;
+    position: relative;
+    top: 300px;
+    left: 70px;
+    overflow: scroll;
+}
+.card-heading{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 0px 12px;
+}
+.single-card>p{
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 15px;
+    display: inline-block;
+    text-align:start;
+    color: black;
+    margin-left: 10px;
+    margin-top: 0;
+}
+.single-card{
+    width: 95%;
+    display: flex;
+    padding: 15px;
+    margin: 0 2.5%;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+}
+#single-article{
+    width: 95%;
+    margin: 0 20px;
+    margin-bottom: 8px;
+}
+#single-article:hover{
+    background-color: rgb(219, 219, 219);
+}
+#single-article>img{
+    width: 320px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px grey;
+}
+.res>img{
+    height: 200px;
+    width: 180px;
+}
+#single-article>p{
+    color: black;
+    margin-left: 10px;
+    font-weight: normal;
+    font-family: "Playwrite DE Grund", cursive;
+}
+#article-set{
+    display: block;
+}
+.single-res{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.single-card:hover{
+    background-color: rgb(255, 255, 255);
+}
+.card-background>h3{
+    color: black;
+    margin:5px 0px 10px 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.card-img{
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px 1px black;
+    height: 200px;
+    width: 310px;
+}
+.main-area{
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+}
+.main-text{
+    position: relative;
+    top: 110px;
+    left: 60px;
+    font-size: 60px;
+    width: 550px;
+    height: fit-content;
+}
+span{
+    color: red;
+    font-weight: 600;
+    margin-left: 100px;
+}
+.about-para{
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 450px;
+    font-size: 15px;
+    margin-top: 5px;
+    line-height: 40px;
+    width: 95%;
+}
+.main-para{
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 450px;
+    font-size: 15px;
+    margin-top: 5px;
+    line-height: 40px;
+}
+.main-img{
+    height: 600px;
+    z-index: -99;
+    object-fit: cover;
+}
+.menu-icon{
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    font-size: 25px;
+}
+.btn{
+    background-color: rgb(231, 37, 37);
+    padding: 14px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    
+}
+.btn:hover{
+    background-color: rgb(163, 52, 52);
+}
+
+
+.about-content
+{  max-height: 250px;
+    padding:12px;
+    position: relative;
+    top: 320px;
+    border-radius: 12px;
+    background-color: rgb(16, 32, 61);
+    text-align: center;
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 4%;
+}
+
+h3{
+     margin: 0;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media screen and (max-width: 1000px){
+.main-para{
+    position: absolute;
+    top: 850px;
+}
+}
+@media screen and (max-width: 750px)
+{
+    .nav-full-view{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+    }
+    
+}
+/*----------------UserLogin------------------ */
+
+
+
+/* -----------------User  Dashboard------------------ */
+.page-heading{
+    position: absolute;
+    top: 130px;
+    left: 210px;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+}
+
+.user-dash-area{
+    position: relative;
+    top: 120px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: space-between;
+}
+#book-img{
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px 1px black;
+    height: 185px;
+    width: 120px;
+    object-fit: cover;
+}
+#user-dashboard-back{
+    padding: 0;
+    margin: 10px;
+    height: 150px;
+    float: right;
+}
+#margin-set{
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    top: 0px;
+    left:30%;
+}
+#margin-set>i{
+    font-size: 70px;
+}
+.inner-box{
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.article-items{
+    width: 600px;
+}
+
+.drop-ul{
+    position: absolute;
+    top: 65px;
+    right: 200px;
+    height: 130px;
+    text-align: center;
+    list-style: none;
+    padding: 0px 10px;
+    border-radius: 12px;
+    background-color: rgb(16, 32, 61);
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.links{
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    font-size: 75px;
+    border-radius: 12px;
+    background-color: rgb(16,32,61);
+    text-align: center;
+    padding-top: 30px;
+    transition: 0.2s ease-in-out;
+    border: none;
+}
+#user-links{
+    padding: 12px;
+}
+.links-para{
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: rgb(8, 19, 39);
+}
+.link-num{
+    color: red;
+    font-size: 21px;
+    margin: 0px;
+}
+
+/* -----------------------Book Listed------------------------------ */
+.book-img{
+    height: 185px;
+    width: 120px;
+    margin-right: 5px;
+    border: 1px solid rgb(8, 19, 39);
+    box-shadow: 1px 1px 12px 1px grey;
+    border-radius: 5px;
+}
+
+.book-details{
+    margin-left: 10px;
+    display: inline-block;
+}
+#ask-ai{
+    background-color: rgb(16,32,61);
+}
+#book-area{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border: none;
+    row-gap: 30px;
+    width: 90%;
+    background-color: #dcdbdb;
+    margin-top: 15px;
+}  
+.book{
+    display: flex;
+    flex: 0 0 28%;
+    margin: 5px;
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    /* align-items: flex-start; */
+    border-radius: 12px;
+}
+
+.book-details>p{
+    /* background-color: aqua; */
+    width: 150px;
+}
+.book-details>p:last-child{
+    margin-bottom: 0;
+}
+.book-name{
+    font-weight: bolder;
+}
+.book-text-format{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 12px;
+}
+ 
+
+/* ----------------------Issued Book---------------------------------- */
+#issued-books-input{
+    color: rgb(8, 19, 39);
+}
+#date{
+    color: black;
+    font-weight: 500;
+}table, th, td {
+    border: 1px solid black;
+    font-size: 12px;
+    border-collapse: collapse;
+    margin-left: 40px;
+  }
+table{
+    position: relative;
+    top: 210px;
+    left: 170px;
+    width: 75%;
+}
+  #table-search{
+    text-align: right;
+  }
+  #record-row-page,option{
+    color: rgb(8,19,39);
+  }
+  th, td {
+    padding: 10px;
+  }
+  th {
+    background-color: rgb(30, 158, 193);
+  }
+  td {
+  background-color: rgb(255, 255, 255);
+  }
+
+
+
+  textarea{
+    padding: 10px;
+    font-weight: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  /* -----------------admin-dashboard--------------- */
+.dash-drop{
+    height: 0px;
+    width: 0px;
+    display: none;
+}
+.dash-drop>ul{
+    display: flex;
+    position: relative;
+    top: 10px;
+    right: 25px;
+    text-align: center;
+    list-style: none;
+    height: 140px;
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 12px;
+    background-color: rgb(16, 32, 61);
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 999;
+}
+
+  /* ---------------Registered Students----------------- */
+
+td{
+    color: black;
+    border: none;
+}
+table{
+    background-color: white;
+}
+.btns{
+    padding: 8px 12px;
+    background-color: rgb(11, 133, 194);
+    color: white;
+    font-weight: 300;
+    border: none;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.delete-btn{
+    margin-left: 40px;
+    background-color: rgb(213, 52, 52);
+}
+.delete-btn:hover{
+    background-color: rgb(202, 71, 71);
+}
+.active-btn{
+    display: inline-block;
+}
+.active-btn:hover{
+    background-color: rgb(29, 149, 209);
+}
+.detail-btn{
+    background-color: green;
+}
+.detail-btn:hover{
+    background-color: rgb(66, 149, 66);
+}
+.inactive-btn{
+    display: none;
+    background-color: brown;
+}
+.inactive-btn:hover{
+    background-color: rgb(203, 61, 61);
+}
+
+
+#grievance{
+    resize: none;
+    height: 10em;
+    width: 45em;
+    color: black;
+  }
+
+/* -------------------Quizess------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  background: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  color: black;
+  width: 80vw;
+  height: fit-content;
+}
+.quiz-body input{
+    height: 30px;
+    color: black;
+}
+.quiz-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  color: black;
+  border-top-left-radius: 10px;
+  padding: 10px;
+  border-top-right-radius: 10px;
+}
+
+.quiz-header h2 {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.quiz-header p {
+  background: #111;
+  color: black;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.quiz-body {
+    display: flex;
+    flex-direction: column;
+  padding: 2rem;
+  height: fit-content;
+}
+
+.quiz-body h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: black;
+  margin: 0;
+}
+
+.quiz-body ul {
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  color: black;
+}
+
+.quiz-body ul li {
+    width: 100%;
+  color: black;
+  font-size: 1rem;
+  border: 1px solid #aab7b8;
+  padding: 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+}
+#question{
+    margin-bottom:10px;
+}
+.quiz-body ul li label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  padding: 0 0.4rem;
+  color: black;
+}
+
+.quiz-footer {
+    height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.quiz-footer button {
+  padding: 0.6rem 1.5rem;
+  outline: none;
+  background-color: rgb(231, 37, 37);
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 5px;
+  color: #fff;
+  opacity: 0.9;
+  transition: 0.3s ease-in-out;
+}
+
+.quiz-body button {
+  padding: 0.6rem 1rem;
+  outline: none;
+  background-color: rgb(231, 37, 37);
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 5px;
+  color: #fff;
+  opacity: 0.9;
+  transition: 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+.quiz-footer button:hover {
+  background-color: rgb(199, 63, 63);
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <%- include('admin-header') %>
+    <p class="page-heading">Add Book</p>
+<form action="/addbook" method="post" enctype="multipart/form-data">
+<table class="chng-pwd-table">
+    <tr>
+        <th style="font-size: 15px;" colspan="10">Book Info</th>
+    </tr>
+    <tr>
+        <td colspan="5">
+            Book Name:
+        </td>
+        <td colspan="5">
+            Category:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <input type="text" name="bookname" id="book-name">
+        </td>
+        <td colspan="5">
+            <select name="bookcategory" id="category" placeholder="Select Category" style="color: black;">
+                <% cat.forEach(cat => { %>
+                <option value="<%= cat.categoryname %>"><%= cat.categoryname %></option>
+             <%}) %>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            Author:
+        </td>
+        <td colspan="5">
+            ISBN Number:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <select name="author" id="author" style="color: black;">
+                <% author.forEach(at => { %>
+                <option value="<%= at.author %>"><%= at.authorname %></option>
+             <%}) %>
+            </select>
+        </td>
+        <td colspan="5">
+            <input type="text" name="isbnnum" id="isbn-number">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            Price*:
+        </td>
+        <td colspan="5">
+            Book Picture*:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            <input type="text" name="price" id="price">
+        </td>
+        <td colspan="5">
+            <input type="file" name="bookpic" id="book-picture" style="border: 1px solid lightblue; padding: 3px;">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn">Submit</button>
+        </td>
+    </tr>
+</table>
+</form>
+<script src="script.js"></script>
+</body>
+</html>

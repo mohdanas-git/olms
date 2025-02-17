@@ -1,0 +1,112 @@
+<style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+nav{
+    background-color: rgb(8, 19, 39);
+    border-bottom: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo{
+    display: inline-block;
+}
+.logo>img{
+    height: 95px;
+    width: 90px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+ul{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.menu-icon,i{
+    font-size: 20px;
+}
+.menu-icon{
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 30px;
+}
+a:hover{
+    color: red;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    transition: 0.3s ease-in-out;
+}
+.nav-items{
+    flex: 1;
+    padding-left: 30%;
+    padding-right: 3%;
+}
+.full-view{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.sidebar{
+    display: none;
+    flex-direction: column;
+    background-color: rgb(8, 19, 39);
+    border-radius: 12px;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+    height: 250px;
+    z-index: 999;
+}
+i{
+    margin-left: 6px;
+    font-size: 15px;
+}
+@media screen and (max-width: 750px)
+{
+    .full-view{
+        display: none;
+    }
+    .menu-icon{
+        display: flex;
+    }
+    
+}
+</style>
+
+<nav>
+    <div class="logo">
+        <img src="/images/logo.gif" alt="logo">
+    </div>
+    <div class="nav-items">
+        <ul class="full-view">
+            <li><a href="/">Home</a></li>
+            <li><a href="/usersignup">Ask AI<i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
+            <li><a href="/userlogin">User Login</a></li>
+            <li><a href="/usersignup">User SignUp</a></li>
+            <li><a href="/admin">Admin Login</a></li>
+        </ul>
+        <div class="menu-icon"><a><i class="fa-solid fa-bars" onclick="showSidebar();"></i></a></div>
+        <ul class="sidebar">
+            <li><a><i class="fa-solid fa-xmark" onclick="hideSidebar();"></i></a></li>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/usersignup">Ask AI<i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
+            <li><a href="/userlogin">User Login</a></li>
+            <li><a href="/usersignup">User SignUp</a></li>
+            <li><a href="/admin">Admin Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script src="script.js"></script>

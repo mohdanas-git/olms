@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Mail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <%- include('admin-header') %>
+    <%- include('admin-sidemenu') %>
+    <p class="page-heading">Send Mail</p>
+    <form action="/admin-send-mail" method="post">
+<table class="chng-pwd-table">
+    <tr>
+        <th style="font-size: 15px;" colspan="10">Send Mail</th>
+    </tr>
+    <tr>
+        <td colspan="5">
+            Select User :
+        </td>
+        <td colspan="5">
+            <select name="username" id="category" placeholder="Select Category" style="color: black; width: 40%;">
+                <option value="#">Select User</option>
+                <% user.forEach(user =>{ %>
+                <option value="<%= user.name %>"><%= user.name %></option><%
+            }) %>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="10">Message: </td>
+    </tr>
+    <tr>
+        <td colspan="10">
+            <textarea name="mssgbox" id="grievance" placeholder="Type Here....."></textarea>
+         </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="btn">Send Mail</button>
+        </td>
+    </tr>
+</table>
+</form>
+<script src="script.js"></script>
+</body>
+</html>

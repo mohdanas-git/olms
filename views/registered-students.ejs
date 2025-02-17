@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registered-Students</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+     td {
+        font-weight: normal;
+        font-size: 12px;
+      }
+      table{
+        width: 80%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('admin-header') %>
+    <p class="page-heading">Managed Registered Students</p>
+    <table>
+      <tr>
+        <th colspan="1">#</th>
+        <th colspan="1">Student ID</th>
+        <th colspan="1">Student Name</th>
+        <th colspan="1">Mobile Number</th>
+        <th colspan="1">Email ID</th>
+        <th colspan="2">Password</th>
+        <th colspan="1">Reg Date</th>
+        <th colspan="1">Status</th>
+        <th colspan="2">Action</th>
+      </tr>
+      <tbody>
+        <% var index1=0 %> <% var index=0 %> 
+        <% users.forEach(user => { %>
+        <tr>
+          <td colspan="1"><%= ++index1 %></td>
+          <td colspan="1">SID<%= ++index %></td>
+          <td colspan="1"><%= user.name %></td>
+          <td colspan="1"><%= user.mob %></td>
+          <td colspan="1"><%= user.email %></td>
+          <td colspan="2"><%= user.pwd %></td>
+          <td colspan="1">2024-01-31</td>
+          <td colspan="1" class="stats">Active</td>
+          <td colspan="2">
+            <button class="btns active-btn" onclick="activateBtn();">
+              Active
+            </button>
+            <button class="btns inactive-btn" onclick="activateBtn();">
+              Inactive
+            </button>
+            <button class="btns detail-btn">Details</button>
+          </td>
+        </tr>
+
+        <% }); %>
+      </tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>

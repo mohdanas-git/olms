@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>Home-Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include('home-header')%>
+    <div class="main-area">
+      <div class="main-text">
+        Read Your <br />
+        <span>Future...</span>
+        <p class="main-para">
+          Drowning in library logistics? Let us streamline your research
+          journey! Our online library management system takes care of tedious
+          tasks like book renewals and availability checks, freeing up your time
+          to delve into your studies. Focus on what truly matters - mastering
+          your field - while we handle the library legwork.
+        </p>
+      </div>
+      <div>
+        <img src="images/background .jpg" class="main-img" />
+      </div>
+    </div>
+    <div class="main-area2">
+      <!-- -------------------------------- -->
+      <div class="home-cards" onclick="showArticle();">
+        <i class="fa-solid fa-newspaper" style="color:rgb(08, 19, 39);"></i>
+        <h3>Articles</h3>
+      </div>
+      <!-- ------------------------------------- -->
+      <div class="home-cards" onclick="showBook();">
+        <i class="fa-solid fa-book" style="color:rgb(08, 19, 39);"></i>
+        <h3>Available Books</h3>
+      </div>
+      <!-- ----------------------------------------- -->
+      <div class="home-cards" onclick="showResource();">
+        <i class="fa-solid fa-bookmark" style="color:rgb(08, 19, 39);"></i>
+        <h3>Resources</h3>
+      </div>
+    </div>
+      <!-- --------------------------------------- -->
+       <!-- Displaying Articles---------------------------------------------- -->
+       <div class="card-background" id="article">
+        <div class="card-heading">
+          <h3 style="color: black;">Article</h3>
+          <i class="fa-solid fa-xmark" style="color: black; font-size: 20px;" onclick="showArticle();"></i>
+        </div>
+        <div class="single-book" id="article-set">
+        <% admart.forEach(article => { %>
+        <div class="book" id="single-article">
+          <% if(article.articleimg){ %>
+            <img src = "<%= article.articleimg %>"> 
+            <% } %>
+              <p><%= article.articlemssg %></p>
+        </div>
+        <% }); %>
+        <% userart.forEach(userart => { %>
+          <div class="book" id="single-article">
+            <% if(userart.userarticleimg){ %>
+              <img src = "<%= userart.userarticleimg %>"> 
+              <% } %>
+                <p><%= userart.userarticlemssg %></p>
+          </div>
+          <% }); %>
+    </div>
+       </div>
+    <!-- --------------------------------------- -->
+     <div class="card-background" id="book">
+      <div class="card-heading">
+        <h3 style="color: black;">Available Books</h3>
+        <i class="fa-solid fa-xmark" style="color: black; font-size: 20px;" onclick="showBook();"></i>
+      </div>
+      <div class="single-book">
+      <% admbooks.forEach(book => { %>
+      <div class="book">
+        <% if(book.bookpicUrl){ %>
+          <img src = "<%= book.bookpicUrl %>"> 
+          <% } %>
+          <div class="book-info">
+            <p style="font-weight: bold;"><%= book.bookname %></p>
+            <p><%= book.bookcategory %></p>
+            <p><%= book.author %></p>
+            <p><%= book.isbnnum %></p>
+            <p><%= book.price %></p>
+          </div>
+      </div>
+      <% }); %>
+  </div>
+     </div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+<div class="card-background" id="resource">
+  <div class="card-heading">
+    <h3 style="color: black;">Resources</h3>
+    <i class="fa-solid fa-xmark" style="color: black; font-size: 20px;" onclick="showResource();"></i>
+  </div>
+  <div class="single-res" id="article-set" style="display:flex; flex-direction: row; flex-wrap: wrap;">
+  <% admres.forEach(res => { %>
+  <div class="book" id="single-article">
+    <% if(res.adminresUrl){ %>
+      <embed src = "<%= res.adminresUrl %>"> </embed>
+      <% } %>
+        <p style="width: 15vw;"><%= res.adminresdet %></p>
+  </div>
+  <% }); %>
+</div>
+ </div>
+</div>
+    <!-- ----------------------------------------- -->
+    <div class="about-content">
+      <h3>About Us</h3>
+      <p class="about-para">
+        Empower your learning with our innovative e-library! Explore a vast
+        collection of the latest articles, covering every genre. Dive deep
+        with popular titles or unearth hidden gems. Test your knowledge with
+        our engaging new quizzes, perfect for sharpening your skills. And for
+        those tricky topics, our free AI chat is here to provide instant
+        guidance. Join us and unlock a world of knowledge and exploration!
+      </p>
+    </div>
+    <%- include('footer') %>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Playwrite+DE+Grund:wght@100..400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Playwrite+DE+Grund:wght@100..400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    color: white;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(8, 19, 39);
+    padding: 0;
+    margin: 0;
+}  
+  
+  .my-profile{
+    position: absolute;
+    top: 180px;
+    left: 28%;
+    width: 50vw;
+    /* height: 65vh; */
+    background-color: rgb(202, 202, 202);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+#chng-pwd-format{
+    width: 70vh;
+}
+
+.ftr{
+    position: relative;
+    bottom: -780px;
+    padding: 10px;
+    text-align: center;
+    right: 0px;
+    font-size: 12px; 
+    border-top: 2px solid red;
+}
+.chng-pwd-format,input{
+    width: 95%;
+    height: 30px;
+}
+.chng-pwd-table{
+    position: absolute;
+    left: 25%;
+    border-collapse: collapse;
+    width: 650px;
+    border: none;
+    border-radius: 12px;
+}
+.chng-pwd-table label{
+  color: black;
+  font-weight: bolder;
+  font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.my-profile-element,p{
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+    display: inline-block;
+}
+.my-profile-element,label a{
+    font-size: 15px;
+    color: black;
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+.my-profile-heading{
+    color: black;
+    text-align: center;
+}
+.my-profile-elements,input{
+    margin: 12px;
+    width: 70%;
+    color: rgb(8,19,39);
+    margin: 0;
+}
+
+.my-profile-elements{
+    margin-left: 30px;
+}
+table{
+    border-collapse: collapse;
+  width: 100%;
+}
+.chng-pwd-table td, .chng-pwd-table th {
+    border: 0px solid #ddd;
+    padding: 8px;
+  }
+
+
+/* ---------------navbar--------------- */
+
+
+/* ------------------------carousel-------------------------- */
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+    flex: 1fr;
+  }
+.carousel-track,img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0px 0px 15px;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+  
+  .carousel-slide {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .carousel-slide.active {
+    transform: translateX(0);
+  }
+
+
+/* --------------Form----------------------- */
+
+.form-container {
+    flex: 1fr;
+    padding: 10px;
+    min-width: 300px;
+    margin: 0 auto;
+    background-color: rgb(16, 32, 61);
+    border-radius: 0px 15px 15px 0px;
+  }
+  
+  
+  .form-group {
+    margin-bottom: 15px; /* Add spacing between form groups */
+  }
+  
+  label {
+    display: block; /* Make labels appear on separate lines */
+    margin-bottom: 5px; /* Add space below labels */
+  }
+div,label{
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    color: white;
+}
+h2{
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center; /* Center the heading */
+    margin: 0px;
+    font-size: 22px;
+    color: rgb(8, 19, 39);
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 3%;
+    padding: 3px;
+}
+#form-para{
+    font-family: "Playwrite DE Grund", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"] {
+    width: 90%;
+    height: 10px; /* Make input fields full width */
+    padding: 10px; /* Add padding to input fields */
+    border: 1px solid #ccc; /* Add a border to input fields */
+    border-radius: 3px;
+    outline: 1px solid rgb(3, 164, 244); /* Adjust color as needed */
+  outline-offset: 0px; /* Add rounded corners to input fields */
+  }
+  
+  p {
+    text-align: center; /* Center the paragraph text */
+    margin-top: 10px; /* Add space above the paragraph */
+  }
+.btn{
+    color: white;
+    background-color: red;
+    padding: 14px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.btn:hover{
+    background-color: rgb(139, 28, 28);
+}
+  /* Responsive Styles (optional) */
+  
+  @media screen and (max-width: 768px) {
+    .form-container {
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  }
+/* ------------container */
+.container{
+    display: flex;
+    width: 70%;
+    margin: 15px 18%;
+    border: 1px solid white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgb(53, 53, 53);
+    position: absolute;
+    top: 120px;
+    z-index: 9999;
+}
+
+input{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.header{
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.footers{
+  position:absolute;
+  bottom: 0;
+}
