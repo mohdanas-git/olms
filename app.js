@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
 const session = require("express-session");
-const bcrypt = require("bcrypt");
+const bcryptjs = require('bcryptjs');
 const { log } = require('console');
 const app = express();
 const port = process.env.PORT || 2000;
@@ -60,7 +60,7 @@ app.post('/submit', async (req, res) => {
   const confirmpassword = req.body.cnfpwd;
   if(password === confirmpassword){
     const { name, mob, email, pwd } = req.body;
-    const hashedPwd = await bcrypt.hash(pwd, 10);
+    const hashedPwd = await bcryptjs.hash(pwd, 10);
     const user = new User({ name, mob, email,  pwd:hashedPwd});
     await user.save();//user is the collection name, but in pularl form
     res.render('user-added-mssg');
@@ -88,7 +88,7 @@ app.post('/login', async (req, res) => {
   try {
     const { email, pwd } = req.body;
     const user = await User.findOne({ email });
-    if (user && await bcrypt.compare(pwd, user.pwd)) {
+    if (user && await bcryptjs.compare(pwd, user.pwd)) {
       req.session.userId = user._id;
       res.redirect('/user-dashboard');
     } else {
@@ -471,7 +471,7 @@ app.post('/admin-signup', async (req, res) => {
   const confirmpassword = req.body.cnfpwd;
   if(password === confirmpassword){
     const {email, pwd } = req.body;
-    const hashedPwd = await bcrypt.hash(pwd, 10);
+    const hashedPwd = await bcryptjs.hash(pwd, 10);
     const admin = new Adminsignup({ email,  pwd:hashedPwd});
     await admin.save();
     res.send('user-added-mssg');
@@ -492,7 +492,7 @@ app.post('/admin-login', async (req, res) => {
   try {
     const { email, password } = req.body;
     const admin = await Adminsignup.findOne({ email });
-    if (admin && await bcrypt.compare(password, admin.pwd)) {
+    if (admin && await bcryptjs.compare(password, admin.pwd)) {
       req.session.adminId = admin._id;
       res.redirect('/admin-dashboard');
     } else {
@@ -520,7 +520,7 @@ app.post('/update-admin-pass/:id %>', async (req, res) => {
   const confirmpassword = req.body.cnfmpwd;
   if(password === confirmpassword){
     const {newpass } = req.body;
-    const hashedPwd = await bcrypt.hash(pwd, 10);
+    const hashedPwd = await bcryptjs.hash(pwd, 10);
     pwd.admin = newpass;
     const admin = new Adminchngpass({newpass:hashedPwd});
     await admin.save();
